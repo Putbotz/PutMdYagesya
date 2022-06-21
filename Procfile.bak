@@ -1,0 +1,1 @@
+worker: node . --db 'https://replit.com/@ALIEFFPUTRA/json-server'
