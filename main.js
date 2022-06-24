@@ -85,7 +85,7 @@ global.loadDatabase = async function loadDatabase() {
 }
 loadDatabase()
 
-global.authFile = `${opts._[0] || 'sasyi'}.data.json`
+global.authFile = `${opts._[0] || 'sus'}.data.json`
 const { state, saveState } = useSingleFileAuthState(global.authFile)
 
 const connectionOptions = {
