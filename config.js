@@ -61,15 +61,15 @@ global.psaweria = 'gaada'
 /*============== NOMOR ==============*/
 global.nomorbot = '601169466091'
 global.nomorown = '60147366955'
-global.namebot = 'Ika'
-global.nameown = 'Ika By Putbotz'
+global.namebot = 'Risya rawr'
+global.nameown = 'Risya rawr By Putbotz'
 
 
 /*============== STAFF ==============*/
 global.owner = [
   ['60147366955'],
   ['601169466091'],
-  ['60147366955', 'Ika By Putbotz ! 🦖', true]
+  ['60147366955', 'Risya rawr By Putbotz ! 🦖', true]
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
@@ -115,13 +115,13 @@ global.APIKeys = { // APIKey Here
 
 /*============== WATERMARK ==============*/
 //GANTI SETERAH MU
-global.wm = '© Ika By Putbotz' //Main Watermark
-global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Ika By Putbotz🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.wm3 = '⫹⫺Ika By Putbotz'
+global.wm = '© Risya rawr By Putbotz' //Main Watermark
+global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Risya rawr By Putbotz🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.wm3 = '⫹⫺Risya rawr By Putbotz'
 global.botdate = `⫹⫺ 𝗗𝗮𝘁𝗲: ${week} ${date}`
 global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${wktuwib}`
-global.titlebot = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Ika By Putbotz🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.author = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Ika By Putbotz🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.titlebot = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Risya rawr By Putbotz🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.author = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Risya rawr By Putbotz🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
 
 
 /*============== LOGO ==============*/
