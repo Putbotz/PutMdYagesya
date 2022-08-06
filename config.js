@@ -44,19 +44,15 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 /*============== SOCIAL ==============*/
 
 // kalo ga punya ketik "-" atau biarin aja biar ada creditsnya :v
-global.sig = 'https://instagram.com/whooputt'
-global.sgh = 'https://github.com/Putbotz'
-global.sgc = 'https://chat.whatsapp.com/EawZW6vp8gwG4uGt0r4Awa'
-global.sdc = 'https://discord.gg/WEJQjugTY7'
-global.snh = 'https://nhentai.net/g/365296/'
+global.sig = '-'
+global.sgh = 'https://github.com/Mymszz'
+global.sgc = 'https://https://wa.me/601172381193'
+global.sdc = '-'
+global.snh = '-'
 
 /*============== PAYMENT ==============*/
-global.pdana = 'gaada'
-global.povo = 'gaada'
-global.pgopay = 'gaada'
-global.ppulsa = '60147366955 maxis'
-global.ppulsa2 = '60147366955 maxis'
-global.psaweria = 'gaada'
+global.ppulsa = '601172381193 digi'
+
 
 /*============== NOMOR ==============*/
 global.nomorbot = '601172381193'
@@ -175,7 +171,7 @@ global.hsquere = ['⛶','❏','⫹⫺']
 
 /*============== STICKER WM ==============*/
 global.stickpack = 'yahaha wahyu'
-global.stickauth = `putganteng yagesya☂`
+global.stickauth = `turu terus ya☂`
 
 global.multiplier = 999 // The higher, The harder levelup
 
