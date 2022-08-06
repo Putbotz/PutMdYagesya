@@ -44,11 +44,11 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 /*============== SOCIAL ==============*/
 
 // kalo ga punya ketik "-" atau biarin aja biar ada creditsnya :v
-global.sig = '-'
+global.sig = ''
 global.sgh = 'https://github.com/Mymszz'
-global.sgc = 'https://https://wa.me/601172381193'
-global.sdc = '-'
-global.snh = '-'
+global.sgc = 'wa.me/601172381193'
+global.sdc = ''
+global.snh = ''
 
 /*============== PAYMENT ==============*/
 global.ppulsa = '601172381193 digi'
