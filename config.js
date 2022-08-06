@@ -59,17 +59,17 @@ global.ppulsa2 = '60147366955 maxis'
 global.psaweria = 'gaada'
 
 /*============== NOMOR ==============*/
-global.nomorbot = '601121071453'
-global.nomorown = '60147366955'
-global.namebot = 'Sasyi'
-global.nameown = 'Sasyi By Putbotz'
+global.nomorbot = '601172381193'
+global.nomorown = '601172381193'
+global.namebot = 'Turuygy'
+global.nameown = 'Turuygy'
 
 
 /*============== STAFF ==============*/
 global.owner = [
-  ['60147366955'],
-  ['601169466091'],
-  ['60147366955', 'Sasyi by Putbotz ! 🦖', true]
+  ['601172381193'],
+  ['601172381193'],
+  ['60147366955', 'Turu by Putbotz ! 🦖', true]
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
@@ -115,13 +115,13 @@ global.APIKeys = { // APIKey Here
 
 /*============== WATERMARK ==============*/
 //GANTI SETERAH MU
-global.wm = '© Sasyi' //Main Watermark
-global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Sasyi🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.wm3 = '⫹⫺Sasyi By Putbotz'
+global.wm = '© Turu' //Main Watermark
+global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Turu🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.wm3 = '⫹⫺Turu By Putbotz'
 global.botdate = `⫹⫺ 𝗗𝗮𝘁𝗲: ${week} ${date}`
 global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${wktuwib}`
-global.titlebot = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Sasyi🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.author = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Sasyi🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.titlebot = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Turu🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.author = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Turu trus🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
 
 
 /*============== LOGO ==============*/
