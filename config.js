@@ -46,26 +46,30 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 // kalo ga punya ketik "-" atau biarin aja biar ada creditsnya :v
 global.sig = '-'
 global.sgh = 'https://github.com/Mymszz'
-global.sgc = 'https://https://wa.me/601172381193'
+global.sgc = 'https://api.whatsapp.com/send?phone=+601172381193&'
 global.sdc = '-'
 global.snh = '-'
 
 /*============== PAYMENT ==============*/
+global.pdana = 'gaada'
+global.povo = 'gaada'
+global.pgopay = 'gaada'
 global.ppulsa = '601172381193 digi'
-
+global.ppulsa2 = '-'
+global.psaweria = '-'
 
 /*============== NOMOR ==============*/
 global.nomorbot = '601172381193'
-global.nomorown = '601172381193'
-global.namebot = 'Turuygy'
-global.nameown = 'Turuygy'
+global.nomorown = '60134406236'
+global.namebot = 'ShamTuru'
+global.nameown = 'Sham'
 
 
 /*============== STAFF ==============*/
 global.owner = [
   ['601172381193'],
   ['601172381193'],
-  ['60147366955', 'Turu by Putbotz ! 🦖', true]
+  ['601172381193', 'By TuruBotz🛌 ', true]
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
@@ -111,13 +115,13 @@ global.APIKeys = { // APIKey Here
 
 /*============== WATERMARK ==============*/
 //GANTI SETERAH MU
-global.wm = '© Turu' //Main Watermark
-global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Turu🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.wm3 = '⫹⫺Turu By Putbotz'
+global.wm = 'By TuruBotz' //Main Watermark
+global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘By TuruBotz🛌˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.wm3 = '⫹⫺By Putbotz'
 global.botdate = `⫹⫺ 𝗗𝗮𝘁𝗲: ${week} ${date}`
 global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${wktuwib}`
-global.titlebot = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Turu🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.author = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Turu trus🦖˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.titlebot = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘By TuruBotz🛌˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.author = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘By TuruBotz🛌˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
 
 
 /*============== LOGO ==============*/
@@ -171,7 +175,7 @@ global.hsquere = ['⛶','❏','⫹⫺']
 
 /*============== STICKER WM ==============*/
 global.stickpack = 'yahaha wahyu'
-global.stickauth = `turu terus ya☂`
+global.stickauth = `putganteng yagesya☂`
 
 global.multiplier = 999 // The higher, The harder levelup
 
