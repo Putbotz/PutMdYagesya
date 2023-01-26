@@ -1,1 +1,1 @@
-worker: node . 
+worker: node . --sessison 'sasyii.data.json'
