@@ -11,7 +11,7 @@ import fetch from 'node-fetch'
 
 const defaultMenu = {
   before: `
-┌── ⳹°❀❬ %me ❭❀°
+┌── ❬ %me ❭
 │✎ Hai, %name!
 │
 │✎ Tersisa *%limit Limit*
@@ -25,12 +25,12 @@ const defaultMenu = {
 │
 │✎ Uptime: %muptime
 │✎ Database: %rtotalreg dari %totalreg
-└─────┈ ⳹ ❋ཻུ۪۪⸙
+└─────┈
 %readmore
 `.trimStart(),
-  header: '┌─ ⳹°❀❬ %category ❭❀°',
+  header: '┌─ ( %category )',
   body: '│✎ %cmd %islimit %isPremium',
-  footer: '└────┈ ⳹ ❋ཻུ۪۪⸙\n',
+  footer: '└────┈ ',
   after: `%c4 %me`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
@@ -241,7 +241,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
 
 let usrs = db.data.users[m.sender]
 let tek = `*${ucapan()} ${conn.getName(m.sender)}*
-┏─── ⳹°❀❬ Putbotz ❭❀°
+┏─── ❬ Caca ❭
 │✎ _Aktif Selama:_ ${mpt}
 │✎ _Jam:_ ${moment.tz('Asia/Jakarta').format('HH')} H  ${moment.tz('Asia/Jakarta').format('mm')} M  ${moment.tz('Asia/Jakarta').format('ss')} S
 │✎ _User:_ ${Object.keys(global.db.data.users).length}
@@ -250,7 +250,7 @@ let tek = `*${ucapan()} ${conn.getName(m.sender)}*
 `
 const listMessage = {
   text: tek,
-  footer: '© Putbotz',
+  footer: '',
   mentions: await conn.parseMention(tek),
   title: `${htki} *LIST MENU* ${htka}`,
   buttonText: `CLICK HERE ⎙`,
@@ -458,7 +458,7 @@ const listMessage = {
             fileLength: fsizedoc,
             pageCount: fpagedoc,
             caption: text,
-            footer: titlebot + '\n⚡ Supported By FR Team',
+            footer: titlebot + '\n⚡ Supportef',
             templateButtons: [
                 {
                     urlButton: {
