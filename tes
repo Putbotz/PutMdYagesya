@@ -1,76 +1,73 @@
-<?php 
-include 'header.php'; // Assuming header.php contains necessary HTML header content
-?>
-
-<!DOCTYPE html>
+<?php include 'header.php'; ?>
 <html>
-<head>
-    <title>Menu</title>
-    <style>
-        /* Set font color to white for the body */
-        body {
-            color: white;
-        }
-
-        /* Override font color to black for table elements */
-        table, th, td {
-            color: black;
-        }
-    </style>
-</head>
-<body>
-    <!-- Login Section -->
-    <div id="menu">
-        <h3>LOG MASUK</h3>
-        <form method="post" action="login_semak.php">
-        <label>Nom. Kad Pengenalan:</label>
-            <input type="text" name="user" placeholder="TAIP DI SINI" size="12%" pattern="[0-9]{12}" required autofocus /><br>
-            <label>Kata Laluan:</label><br>
-            <input type="password" name="pass" placeholder="******" minlength="6" required /><br><br>
-            <button name="hantar" type="submit">SIGN IN</button>
-            <button type="reset">RESET</button>
+<!-- PANGGIL MENU -->
+<div id="menu">
+    <?php include 'menu.php'; ?>
+</div>
+<br>
+<!-- PANGGIL ISI -->
+<div id="isi">
+    <div id="printarea">
+        <!-- BORANG CARIAN -->
+        <form method="post">
+            <label style="color: white;">Carian Nombor Kad Pengenalan:</label>
+            <input type="text" name="carian" size="20%" minLength="12" maxLength="12" 
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57" autofocus>
+            <button type="submit" name="cari">CARI</button>
         </form>
-        <br>
-        <h3>DAFTAR</h3>
-        <a href="signup.php"><button>SIGN UP</button></a>
-    </div>
-
-    <!-- Activity Display Section -->
-    <div id="isi">
-        <h2><?php echo strtoupper("SELAMAT DATANG KE ".$namasys1); ?></h2>
-        <hr>
-
         <?php
-        // Assuming $con is your database connection
-        $stmt = $con->prepare("SELECT * FROM aktiviti WHERE tarikhAktiviti >= ? ORDER BY tarikhAktiviti ASC");
-        $stmt->bind_param("s", $tarikhkini);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if($result->num_rows > 0){
-        ?>
-            <h2>JADUAL AKTIVITI DARI TARIKH <?php echo $tarikhkini;?></h2>
-            <table border="1">
-                <tr>
-                    <th>BIL</th>
-                    <th>KETERANGAN AKTIVITI</th>
-                    <th>TARIKH</th>
-                </tr>
-                <?php 
+        if (isset($_POST['carian'])) {
+            $jumpa = $_POST['carian'];
+            #PAPAR HASIL CARIAN
+            $query_hadir = mysqli_query($con, "SELECT * FROM hadir AS t1 INNER JOIN peserta AS 
+            t2 ON t1.nomKp=t2.nomKp INNER JOIN hp AS t3 ON t2.nomHp=t3.nomHp INNER JOIN aktiviti 
+            AS t4 ON t1.kod=t4.kod WHERE t1.nomKp = '$jumpa' ORDER BY t3.nama ASC");
+            
+            if ($papar = mysqli_fetch_array($query_hadir)) {
                 $no = 1;
-                while ($info1 = $result->fetch_assoc()){ ?>
+                ?>
+                <h2><u style="color: white;"> LAPORAN KEHADIRAN </u></h2>
+                <?php
+                echo "<font style='color: white;'>AKTIVITI : " . $papar['keterangan'];
+                echo "<br>NAMA : " . $papar['nama'];
+                echo "<br>JANTINA : " . $papar['jantina'];
+                echo "<br>NOMBOR KP: " . $papar['nomKp'];
+                ?>
+                <!-- PAPAR JADUAL -->
+                <hr><br>
+                <table border="1">
                     <tr>
-                        <td><?php echo $no; ?></td>
-                        <td><?php echo htmlspecialchars($info1['keterangan']); ?></td>
-                        <td><?php echo htmlspecialchars($info1['tarikhAktiviti']); ?></td>
+                        <th>BIL</th>
+                        <th>TARIKH</th>
+                        <th>MASA</th>
                     </tr>
-                    <?php $no++; } ?>
-            </table>
-        <?php
-        }else{
-            echo "Maaf, Tiada aktiviti setakat ini";
+                    <?php
+                    foreach ($query_hadir as $hadir) {
+                        ?>
+                        <tr>
+                            <td><?php echo $no; ?></td>
+                            <td><?php echo $hadir['tarikh']; ?></td>
+                            <td><?php echo $hadir['masa']; ?></td>
+                        </tr>
+                        <?php $no++;
+                    }
+                    ?>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <font style="font-size:10px">
+                                * Senarai Tamat *<br />
+                                Bilangan kehadiran: <?php echo $no - 1; ?>
+                            </font><br>
+                            <button onclick="javascript:window.print()">CETAK</button>
+                        </td>
+                    </tr>
+                </table>
+                <?php
+            } else {
+                echo "<span style='color: white;'>Maaf, Tiada yang sepadan</span>";
+            }
         }
         ?>
     </div>
-</body>
+</div>
 </html>
