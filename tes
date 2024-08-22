@@ -1,73 +1,36 @@
-<?php include 'header.php'; ?>
-<html>
-<!-- PANGGIL MENU -->
-<div id="menu">
-    <?php include 'menu.php'; ?>
-</div>
-<br>
-<!-- PANGGIL ISI -->
-<div id="isi">
-    <div id="printarea">
-        <!-- BORANG CARIAN -->
-        <form method="post">
-            <label style="color: white;">Carian Nombor Kad Pengenalan:</label>
-            <input type="text" name="carian" size="20%" minLength="12" maxLength="12" 
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57" autofocus>
-            <button type="submit" name="cari">CARI</button>
-        </form>
-        <?php
-        if (isset($_POST['carian'])) {
-            $jumpa = $_POST['carian'];
-            #PAPAR HASIL CARIAN
-            $query_hadir = mysqli_query($con, "SELECT * FROM hadir AS t1 INNER JOIN peserta AS 
-            t2 ON t1.nomKp=t2.nomKp INNER JOIN hp AS t3 ON t2.nomHp=t3.nomHp INNER JOIN aktiviti 
-            AS t4 ON t1.kod=t4.kod WHERE t1.nomKp = '$jumpa' ORDER BY t3.nama ASC");
-            
-            if ($papar = mysqli_fetch_array($query_hadir)) {
-                $no = 1;
-                ?>
-                <h2><u style="color: white;"> LAPORAN KEHADIRAN </u></h2>
-                <?php
-                echo "<font style='color: white;'>AKTIVITI : " . $papar['keterangan'];
-                echo "<br>NAMA : " . $papar['nama'];
-                echo "<br>JANTINA : " . $papar['jantina'];
-                echo "<br>NOMBOR KP: " . $papar['nomKp'];
-                ?>
-                <!-- PAPAR JADUAL -->
-                <hr><br>
-                <table border="1">
-                    <tr>
-                        <th>BIL</th>
-                        <th>TARIKH</th>
-                        <th>MASA</th>
-                    </tr>
-                    <?php
-                    foreach ($query_hadir as $hadir) {
-                        ?>
-                        <tr>
-                            <td><?php echo $no; ?></td>
-                            <td><?php echo $hadir['tarikh']; ?></td>
-                            <td><?php echo $hadir['masa']; ?></td>
-                        </tr>
-                        <?php $no++;
-                    }
-                    ?>
-                    <tr>
-                        <td colspan="3" align="center">
-                            <font style="font-size:10px">
-                                * Senarai Tamat *<br />
-                                Bilangan kehadiran: <?php echo $no - 1; ?>
-                            </font><br>
-                            <button onclick="javascript:window.print()">CETAK</button>
-                        </td>
-                    </tr>
-                </table>
-                <?php
-            } else {
-                echo "<span style='color: white;'>Maaf, Tiada yang sepadan</span>";
-            }
-        }
-        ?>
-    </div>
-</div>
-</html>
+<?php
+require 'database.php';
+#TERIMA FAIL CSV POST
+if(isset($_POST["import"])){
+
+if(!empty($_FILES['file']['name'])){
+$filename=$_FILES["file"]["tmp_name"];
+$file = fopen($filename, "r");
+while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
+{
+$NAME = $getData[0];
+$LP = $getData[1];
+$KP = $getData[2];
+$HP = $getData[3];
+#PASSWORD 6 DIGIT DARI KANAN
+$PW=(substr($KP,6));
+
+#MASUKKAN DALAM TABLE
+mysqli_query($con,"INSERT INTO hp
+values ('".$HP."','".$NAME."')");
+mysqli_query($con,"INSERT INTO peserta
+values
+('".$KP."','".$LP."','".$PW."','PENGGUNA','".$HP."')");
+echo "<script>alert('Pindah naik fail CSV berjaya');
+ window.location='senarai_ahli.php'</script>";
+}
+fclose($file);
+}else{
+
+echo "<script>alert('Pindah naik fail CSV gagal');
+ window.location='import_ahli.php'</script>";
+
+}
+}
+
+?>
