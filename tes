@@ -1,0 +1,76 @@
+<?php 
+include 'header.php'; // Assuming header.php contains necessary HTML header content
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+        /* Set font color to white for the body */
+        body {
+            color: white;
+        }
+
+        /* Override font color to black for table elements */
+        table, th, td {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="menu">
+        <h3>LOG MASUK</h3>
+        <form method="post" action="login_semak.php">
+        <label>Nom. Kad Pengenalan:</label>
+            <input type="text" name="user" placeholder="TAIP DI SINI" size="12%" pattern="[0-9]{12}" required autofocus /><br>
+            <label>Kata Laluan:</label><br>
+            <input type="password" name="pass" placeholder="******" minlength="6" required /><br><br>
+            <button name="hantar" type="submit">SIGN IN</button>
+            <button type="reset">RESET</button>
+        </form>
+        <br>
+        <h3>DAFTAR</h3>
+        <a href="signup.php"><button>SIGN UP</button></a>
+    </div>
+
+    <!-- Activity Display Section -->
+    <div id="isi">
+        <h2><?php echo strtoupper("SELAMAT DATANG KE ".$namasys1); ?></h2>
+        <hr>
+
+        <?php
+        // Assuming $con is your database connection
+        $stmt = $con->prepare("SELECT * FROM aktiviti WHERE tarikhAktiviti >= ? ORDER BY tarikhAktiviti ASC");
+        $stmt->bind_param("s", $tarikhkini);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if($result->num_rows > 0){
+        ?>
+            <h2>JADUAL AKTIVITI DARI TARIKH <?php echo $tarikhkini;?></h2>
+            <table border="1">
+                <tr>
+                    <th>BIL</th>
+                    <th>KETERANGAN AKTIVITI</th>
+                    <th>TARIKH</th>
+                </tr>
+                <?php 
+                $no = 1;
+                while ($info1 = $result->fetch_assoc()){ ?>
+                    <tr>
+                        <td><?php echo $no; ?></td>
+                        <td><?php echo htmlspecialchars($info1['keterangan']); ?></td>
+                        <td><?php echo htmlspecialchars($info1['tarikhAktiviti']); ?></td>
+                    </tr>
+                    <?php $no++; } ?>
+            </table>
+        <?php
+        }else{
+            echo "Maaf, Tiada aktiviti setakat ini";
+        }
+        ?>
+    </div>
+</body>
+</html>
